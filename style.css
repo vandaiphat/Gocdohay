@@ -1,340 +1,183 @@
-/* ===========================
-   KHIEM HUB - STYLE V1.0
-=========================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* Giao diện tổng thể */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-body{
-
-    font-family:'Be Vietnam Pro',sans-serif;
-
-    background:#F7F8F3;
-
-    color:#222;
-
+/* Ô tìm kiếm */
+.search-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+.search-container input {
+    width: 100%;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
 }
 
-.container{
-
-    max-width:560px;
-
-    margin:auto;
-
-    padding:40px 20px 60px;
-
+/* Khối thống kê xếp ngang */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+.stat-num {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2b7a78;
+}
+.stat-label {
+    font-size: 13px;
+    color: #777;
 }
 
-.header{
+/* Mạng xã hội */
+.social-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+.social-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.facebook { background-color: #1877f2; }
+.youtube { background-color: #ff0000; }
+.tiktok { background-color: #010101; }
 
-    text-align:center;
-
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 30px 0;
 }
 
-.avatar{
-
-    width:100px;
-
-    height:100px;
-
-    border-radius:50%;
-
-    background:#6D8C68;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:42px;
-
-    margin:auto;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.12);
-
-    transition:.35s;
+/* Bộ lọc danh mục */
+.category-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.category-btn {
+    border: none;
+    background: #eee;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.category-btn.active, .category-btn:hover {
+    background: #2b7a78;
+    color: #fff;
 }
 
-.avatar:hover{
-
-    transform:scale(1.06);
+/* Lưới sản phẩm */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.product-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+}
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.product-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+.product-price {
+    font-size: 16px;
+    color: #e44d26;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.buy-btn {
+    text-align: center;
+    background: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: auto;
 }
 
-h1{
-
-    margin-top:28px;
-
-    font-size:44px;
-
-    font-weight:700;
-
-}
-
-.header p{
-
-    margin-top:15px;
-
-    color:#666;
-
-    line-height:1.8;
-
-    font-size:18px;
-
-}
-
-.search{
-
-    margin-top:35px;
-
-    width:100%;
-
-    height:62px;
-
-    border:none;
-
-    border-radius:18px;
-
-    padding:0 22px;
-
-    font-size:17px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
-
-    transition:.25s;
-
-}
-
-.search:focus{
-
-    outline:none;
-
-    box-shadow:0 0 0 3px #CFE4C7;
-}
-
-#categories{
-
-    margin-top:35px;
-
-}/* ===========================
-   CATEGORY CARD
-=========================== */
-
-.category-card{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    background:#fff;
-
-    border-radius:20px;
-
-    padding:20px;
-
-    margin-bottom:18px;
-
-    text-decoration:none;
-
-    color:#222;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
-
-    transition:.25s;
-
-}
-
-.category-card:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 16px 35px rgba(0,0,0,.10);
-
-}
-
-.left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-}
-
-.icon{
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:18px;
-
-    background:#EEF6EB;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:30px;
-
-}
-
-.category-card h3{
-
-    font-size:22px;
-
-    margin-bottom:6px;
-
-}
-
-.category-card p{
-
-    color:#777;
-
-    font-size:15px;
-
-}
-
-.arrow{
-
-    font-size:34px;
-
-    color:#9BA59A;
-
-    transition:.3s;
-
-}
-
-.category-card:hover .arrow{
-
-    transform:translateX(6px);
-
-    color:#5F7F61;
-
-}/*==========================
-        STATS
-==========================*/
-
-.stats{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:15px;
-
-    margin:28px 0 35px;
-
-}
-
-.stat-box{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:18px;
-
-    text-align:center;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
-
-    transition:.25s;
-
-}
-
-.stat-box:hover{
-
-    transform:translateY(-4px);
-
-}
-
-.number{
-
-    font-size:24px;
-
-    font-weight:700;
-
-    color:#5F7F61;
-
-}
-
-.label{
-
-    margin-top:8px;
-
-    color:#777;
-
-    font-size:14px;
-
-}/*==========================
-        FOOTER
-==========================*/
-
-.footer{
-
-    margin-top:60px;
-
-    text-align:center;
-
-}
-
-.footer h3{
-
-    margin-bottom:25px;
-
-    color:#5F7F61;
-
-}
-
-.footer a{
-
-    display:block;
-
-    background:white;
-
-    margin-bottom:12px;
-
-    padding:16px;
-
-    border-radius:16px;
-
-    text-decoration:none;
-
-    color:#222;
-
-    font-weight:500;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.05);
-
-    transition:.25s;
-
-}
-
-.footer a:hover{
-
-    background:#EEF6EB;
-
-    transform:translateY(-3px);
-
-}
-
-.copyright{
-
-    margin-top:35px;
-
-    color:#999;
-
-    font-size:14px;
-
+.footer {
+    text-align: center;
+    margin-top: 5px;
+    color: #888;
+    font-size: 13px;
 }
