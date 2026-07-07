@@ -3,205 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Decor & Setup - Danh Sách Sản Phẩm</title>
-    <!-- Chèn Google Fonts để giao diện chữ đẹp hơn -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            padding: 20px 10px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Phần Header Thông tin cá nhân */
-        .profile-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
-        }
-
-        .profile-avatar {
-            width: 90px;
-            height: 90px;
-            background: #ffe5e5;
-            font-size: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-        }
-
-        .profile-name {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #222;
-        }
-
-        .profile-bio {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* Danh sách sản phẩm */
-        .product-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .product-card {
-            background: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border: 1px solid #eee;
-            transition: transform 0.2s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Ô chứa Emoji sản phẩm - Đã sửa lỗi hiển thị */
-        .product-emoji-box {
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #fff5f5;
-            font-size: 75px;
-            border-radius: 15px 15px 0 0;
-            border-bottom: 1px dashed #ffe5e5;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #222;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .product-desc {
-            font-size: 13px;
-            color: #777;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        /* Nút bấm mua hàng */
-        .btn-buy {
-            display: block;
-            text-align: center;
-            background: #ff4d4f;
-            color: #fff;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-
-        .btn-buy:hover {
-            background: #ff7875;
-        }
-    </style>
+    <title>Góc Đồ Hay by Khiêm</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Thêm Font Awesome để hiện các icon MXH -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <div class="container">
-        <!-- Khu vực hiển thị thông tin Kênh / Chủ Bio -->
-        <div class="profile-card">
-            <div class="profile-avatar">👨‍💻</div>
-            <div class="profile-name">Mê Setup & Decor</div>
-            <div class="profile-bio">Tổng hợp những món đồ setup góc làm việc, học tập siêu chill và chất lượng tốt nhất dành cho bạn! ✨</div>
+        <!-- Khu vực Header (Avatar & Giới thiệu) -->
+        <header class="header">
+            <div class="avatar-container">
+                <!-- Đã sửa lỗi: Thay thế đoạn mã lỗi bằng một emoji avatar đại diện tinh tế cho cá nhân -->
+                <div class="avatar-emoji" style="font-size: 50px; text-align: center; line-height: 80px;">👨‍💻</div>
+            </div>
+            <h1>Góc Đồ Hay by Khiêm</h1>
+            <p class="bio">Chia sẻ những sản phẩm mình đã trải nghiệm và thấy đáng để giới thiệu.</p>
+        </header>
+
+        <!-- Thanh tìm kiếm sản phẩm -->
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search-input" placeholder="Tìm sản phẩm...">
         </div>
 
-        <!-- Danh sách sản phẩm được đổ tự động từ JavaScript -->
-        <div id="products" class="product-list"></div>
+        <!-- Thống kê nhanh -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <span class="stat-num" id="total-products">127+</span>
+                <span class="stat-label">Sản phẩm</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num" id="total-categories">5</span>
+                <span class="stat-label">Danh mục</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-num"><i class="fas fa-check"></i></span>
+                <span class="stat-label">Cập nhật</span>
+            </div>
+        </div>
+
+        <!-- Khối Mạng Xã Hội -->
+        <div class="social-section">
+            <h3>❤️ Kết nối với mình</h3>
+            <div class="social-links">
+                <a href="#" class="social-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="#" class="social-btn tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Khu vực Bộ lọc Danh mục (Categories) -->
+        <div class="categories-section">
+            <div class="category-tags" id="category-tags">
+                <!-- Danh mục sẽ tự động đổ vào đây bằng JavaScript -->
+            </div>
+        </div>
+
+        <!-- Khu vực Danh sách Sản phẩm -->
+        <main class="products-grid" id="products-grid">
+            <!-- Sản phẩm sẽ tự động đổ vào đây bằng JavaScript -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Góc Đồ Hay by Khiêm</p>
+        </footer>
     </div>
 
-    <script>
-        // MẢNG DỮ LIỆU SẢN PHẨM: Bạn có thể tự do thêm, sửa sản phẩm tại đây cực kỳ dễ dàng!
-        const productData = [
-            {
-                title: "Bàn Phím Cơ Aula F75 - Gõ Êm, Hợp Setup",
-                desc: "Dòng bàn phím quốc dân cho anh em mê âm thanh êm ái, thích hợp decor góc làm việc công thái học cực chill.",
-                image: "⌨️", 
-                link: "https://shope.ee/vi-du-link-1" // Thay link Shopee Affiliate của bạn vào đây
-            },
-            {
-                title: "Chuột Công Thái Học Không Dây",
-                desc: "Thiết kế bảo vệ cổ tay, click cực êm không gây tiếng ồn, thời lượng pin siêu trâu.",
-                image: "🖱️",
-                link: "https://shope.ee/vi-du-link-2"
-            },
-            {
-                title: "Đèn LED Thanh Màn Hình Treo Monitor",
-                desc: "Chống mỏi mắt khi làm việc ban đêm, tăng điểm thẩm mỹ cho góc máy lên tầm cao mới.",
-                image: "💡",
-                link: "https://shope.ee/vi-du-link-3"
-            }
-        ];
-
-        // HÀM RENDER ĐỔ DỮ LIỆU RA GIAO DIỆN (Đã xử lý dứt điểm lỗi hiển thị lỗi chữ `${product.image}`)
-        function renderProducts() {
-            const container = document.getElementById('products');
-            container.innerHTML = ''; // Làm trống danh sách trước khi nạp
-
-            productData.forEach(product => {
-                // Tạo khung thẻ sản phẩm
-                const card = document.createElement('div');
-                card.className = 'product-card';
-
-                // Tạo phần hiển thị Emoji
-                const emojiBox = document.createElement('div');
-                emojiBox.className = 'product-emoji-box';
-                emojiBox.innerText = product.image; // Gán text trực tiếp để an toàn 100% không lo lỗi dấu nháy
-
-                // Tạo phần chứa thông tin chữ và nút bấm
-                const infoBox = document.createElement('div');
-                infoBox.className = 'product-info';
-                infoBox.innerHTML = `
-                    <div class="product-title">${product.title}</div>
-                    <div class="product-desc">${product.desc}</div>
-                    <a href="${product.link}" target="_blank" rel="noopener noreferrer" class="btn-buy">Mua Ngay Tại Shopee</a>
-                `;
-
-                // Ghép nối các phần vào thẻ sản phẩm lớn
-                card.appendChild(emojiBox);
-                card.appendChild(infoBox);
-
-                // Đưa thẻ sản phẩm ra ngoài màn hình
-                container.appendChild(card);
-            });
-        }
-
-        // Chạy hàm hiển thị ngay khi trang web tải xong
-        document.addEventListener('DOMContentLoaded', renderProducts);
-    </script>
+    <!-- Nhúng file Script xử lý dữ liệu JSON -->
+    <script src="script.js"></script>
 </body>
 </html>
