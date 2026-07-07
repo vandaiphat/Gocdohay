@@ -2,77 +2,24 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Đồ Hay by Khiêm</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Thêm Font Awesome để hiện các icon MXH -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Góc Đồ Hay by Khiêm</title>
 </head>
 <body>
     <div class="container">
-        <!-- Khu vực Header (Avatar & Giới thiệu) -->
-        <header class="header">
-            <div class="avatar-container">
-                <!-- Đã sửa lỗi: Thay thế đoạn mã lỗi bằng một emoji avatar đại diện tinh tế cho cá nhân -->
-                <div class="avatar-emoji" style="font-size: 50px; text-align: center; line-height: 80px;">👨‍💻</div>
-            </div>
+        <!-- Avatar và Header giữ nguyên -->
+        <div class="header">
+            <div class="avatar-container"><div class="avatar-emoji">💻</div></div>
             <h1>Góc Đồ Hay by Khiêm</h1>
             <p class="bio">Chia sẻ những sản phẩm mình đã trải nghiệm và thấy đáng để giới thiệu.</p>
-        </header>
-
-        <!-- Thanh tìm kiếm sản phẩm -->
-        <div class="search-container">
-            <i class="fas fa-search search-icon"></i>
-            <input type="text" id="search-input" placeholder="Tìm sản phẩm...">
         </div>
 
-        <!-- Thống kê nhanh -->
-        <div class="stats-container">
-            <div class="stat-card">
-                <span class="stat-num" id="total-products">127+</span>
-                <span class="stat-label">Sản phẩm</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-num" id="total-categories">5</span>
-                <span class="stat-label">Danh mục</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-num"><i class="fas fa-check"></i></span>
-                <span class="stat-label">Cập nhật</span>
-            </div>
-        </div>
+        <!-- Các danh mục -->
+        <div id="category-tags" style="text-align: center; margin-bottom: 20px;"></div>
 
-        <!-- Khối Mạng Xã Hội -->
-        <div class="social-section">
-            <h3>❤️ Kết nối với mình</h3>
-            <div class="social-links">
-                <a href="#" class="social-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
-                <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
-                <a href="#" class="social-btn tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
-        </div>
-
-        <hr class="divider">
-
-        <!-- Khu vực Bộ lọc Danh mục (Categories) -->
-        <div class="categories-section">
-            <div class="category-tags" id="category-tags">
-                <!-- Danh mục sẽ tự động đổ vào đây bằng JavaScript -->
-            </div>
-        </div>
-
-        <!-- Khu vực Danh sách Sản phẩm -->
-        <main class="products-grid" id="products-grid">
-            <!-- Sản phẩm sẽ tự động đổ vào đây bằng JavaScript -->
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2026 Góc Đồ Hay by Khiêm</p>
-        </footer>
+        <!-- Danh sách sản phẩm -->
+        <div id="products-grid"></div>
     </div>
-
-    <!-- Nhúng file Script xử lý dữ liệu JSON -->
     <script src="script.js"></script>
 </body>
 </html>
