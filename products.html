@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sản phẩm</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f6f6f6;
+
+margin:0;
+
+}
+
+.container{
+
+max-width:700px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+.back{
+
+text-decoration:none;
+
+font-weight:bold;
+
+display:inline-block;
+
+margin-bottom:20px;
+
+}
+
+h1{
+
+margin-bottom:25px;
+
+}
+
+.product{
+
+background:#fff;
+
+padding:18px;
+
+border-radius:12px;
+
+margin-bottom:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.product a{
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1a73e8;
+
+}
+
+.product a:hover{
+
+text-decoration:underline;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a class="back" href="index.html">← Quay lại</a>
+
+<h1 id="title"></h1>
+
+<div id="products"></div>
+
+</div>
+
+
+<script>
+
+const id = new URLSearchParams(window.location.search).get("id");
+
+fetch("products.json")
+.then(res => res.json())
+.then(data => {
+
+    const category = data.categories.find(c => c.id === id);
+
+    const title = document.getElementById("title");
+    const container = document.getElementById("products");
+
+    if (!category) {
+
+        title.innerText = "Không tìm thấy danh mục";
+        return;
+
+    }
+
+    title.innerText = category.title;
+
+    category.products.forEach(product => {
+
+        container.innerHTML += `
+
+        <div class="product">
+
+            <a href="${product.url}" target="_blank">
+
+                ${product.name}
+
+            </a>
+
+        </div>
+
+        `;
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>
